@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hero Run</title>
+    <style>
+        body{
+            margin:0;
+            background:skyblue;
+            overflow:hidden;
+            font-family:Arial;
+        }
+
+        #game{
+            width:100%;
+            height:100vh;
+            position:relative;
+            background:linear-gradient(skyblue,#7ec850);
+        }
+
+        #hero{
+            width:50px;
+            height:50px;
+            background:red;
+            position:absolute;
+            bottom:50px;
+            left:100px;
+            border-radius:10px;
+        }
+
+        .coin{
+            width:25px;
+            height:25px;
+            background:gold;
+            border-radius:50%;
+            position:absolute;
+        }
+
+        #score{
+            position:absolute;
+            top:15px;
+            left:15px;
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        #home{
+            position:absolute;
+            top:15px;
+            right:15px;
+            text-decoration:none;
+            background:black;
+            color:white;
+            padding:10px;
+            border-radius:8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="game">
+
+<div id="score">Score: 0</div>
+
+<a id="home" href="index.html">Home</a>
+
+<div id="hero"></div>
+
+<div class="coin" id="coin" style="left:600px; bottom:60px;"></div>
+
+</div>
+
+<script>
+
+let hero=document.getElementById("hero");
+let coin=document.getElementById("coin");
+
+let x=100;
+let score=0;
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key=="ArrowRight"){
+        x+=20;
+    }
+
+    if(e.key=="ArrowLeft"){
+        x-=20;
+    }
+
+    if(x<0) x=0;
+    if(x>window.innerWidth-60) x=window.innerWidth-60;
+
+    hero.style.left=x+"px";
+
+    let coinX=parseInt(coin.style.left);
+
+    if(Math.abs(x-coinX)<30){
+
+        score++;
+
+        document.getElementById("score").innerHTML="Score: "+score;
+
+        coin.style.left=(Math.random()*(window.innerWidth-100))+"px";
+    }
+
+});
+
+</script>
+
+</body>
+</html>

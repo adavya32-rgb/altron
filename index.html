@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameHub</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#111827;
+    color:white;
+}
+
+header{
+    background:#1f2937;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    color:#38bdf8;
+}
+
+.games{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    padding:40px;
+}
+
+.card{
+    width:260px;
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 10px rgba(0,0,0,.5);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+}
+
+.card h2{
+    text-align:center;
+}
+
+.play{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#22c55e;
+    color:white;
+    padding:12px;
+    font-weight:bold;
+}
+
+.play:hover{
+    background:#16a34a;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1f2937;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>?? My GameHub</h1>
+<p>Play free browser games!</p>
+</header>
+
+<div class="games">
+
+<div class="card">
+<img src="https://picsum.photos/300/200?hero" alt="Hero Game">
+<h2>Hero Swing</h2>
+<a class="play" href="hero.html">? Play</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?racing" alt="Racing Game">
+<h2>Mini Racing</h2>
+<a class="play" href="racing.html">? Play</a>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?tictactoe" alt="Tic Tac Toe">
+<h2>Tic Tac Toe</h2>
+<a class="play" href="tictactoe.html">? Play</a>
+</div>
+
+</div>
+
+<footer>
+© 2026 My GameHub
+</footer>
+
+</body>
+</html>
